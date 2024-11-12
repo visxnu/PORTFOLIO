@@ -333,14 +333,11 @@
     <!-- Portfolio End -->
 
     
-  <!-- Contact Start -->
+<!-- Contact Start -->
 <div class="container-fluid py-5" id="contact">
     <div class="container">
-        <!-- Web3Forms form with correct action and method -->
-        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-            <!-- Web3Forms access key -->
-            <input type="hidden" name="access_key" value="7c405e8f-2c88-49a5-92ad-f7e611e1f4d2">
-
+        <!-- Form with EmailJS integration -->
+        <form id="contactForm">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
                 <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
@@ -349,7 +346,7 @@
                 <div class="col-lg-8">
                     <div class="contact-form text-center">
                         <div id="success"></div>
-                        
+
                         <!-- Form Fields -->
                         <div class="form-row">
                             <div class="control-group col-sm-6">
@@ -384,6 +381,28 @@
     </div>
 </div>
 <!-- Contact End -->
+
+<!-- EmailJS Integration Script -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your User ID
+  emailjs.init("ajcoqPyAqssfPrCg-");  // Replace with your actual EmailJS User ID
+
+  // Handling form submission
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent default form submission behavior
+
+    // Send form data to EmailJS
+    emailjs.sendForm('service_ss88sol', 'template_yvc0qj2', this)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        document.getElementById("success").innerText = "Message sent successfully!";
+      }, function(error) {
+        console.error('FAILED...', error);
+        document.getElementById("success").innerText = "Failed to send message. Please try again later.";
+      });
+  });
+</script>
 
 
 
