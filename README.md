@@ -53,4 +53,4 @@ For inquiries, you can reach me at:
 
 ---
 
-Replace `"https://github.com/yourusername/yourrepositoryname.git"` with the actual URL of your GitHub repository. Let me know if you'd like any additional customization!
+https://github.com/visxnu/PORTFOLIO.git. Let me know if you'd like any additional customization!
