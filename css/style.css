@@ -9982,3 +9982,32 @@ h6,
   padding: 0;
   list-style-type: none;
 }
+
+.position-relative {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+
+.position-relative:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.img-fluid {
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect on hover */
+}
+
+.position-relative:hover .img-fluid {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
